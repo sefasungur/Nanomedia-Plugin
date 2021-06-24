@@ -1,0 +1,59 @@
+#wpwrap {
+  background: #fff;
+}
+#adminmenuback {
+  background: #605F5E;
+}
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap {
+  width: 250px;
+}
+#adminmenuwrap,
+#adminmenu {
+  background-color: #605F5E;
+}
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+#adminmenu .wp-menu-arrow,
+#adminmenu .wp-menu-arrow div,
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+.folded #adminmenu li.current.menu-top,
+.folded #adminmenu li.wp-has-current-submenu {
+  background: #F18303;
+}
+#wpadminbar {
+  background: #F18303;
+  color: #fff;
+}
+#wpadminbar .ab-empty-item,
+#wpadminbar a.ab-item,
+#wpadminbar > #wp-toolbar span.ab-label,
+#wpadminbar > #wp-toolbar span.noticon {
+  color: #fff;
+  opacity: 1;
+}
+#wpadminbar .ab-empty-item:hover,
+#wpadminbar a.ab-item:hover {
+  color: #fff;
+}
+.welcome-panel {
+  display: none;
+}
+#wpcontent,
+#wpfooter {
+  margin-left: 250px;
+}
+#adminmenu .wp-submenu {
+  left: 250px;
+}
+.page-title-action {
+  background: #F18303 !important;
+  color: #fff !important;
+  border: 1px solid #F18303 !important;
+}
+#adminmenu li.menu-top {
+  min-height: 50px;
+}
+/*# sourceMappingURL=dashboard.css.map */
