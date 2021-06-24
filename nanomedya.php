@@ -31,7 +31,7 @@ function getPageGallery($pageID){
     }
     $images = [];
     foreach($ids as $id ) {
-        $images[] = wp_get_attachment_image( $id, "full" );
+        $images[] = wp_get_attachment_image_src( $id, "full" );
     }
     return $images;
 }
