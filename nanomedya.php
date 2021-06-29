@@ -26,7 +26,7 @@ function nanomedyaDashboard() {
 function getPageGallery(){
     /* Hide Gallery Block*/
     wp_enqueue_style( 'hide-gallery-block', plugin_dir_url( __FILE__ ) . 'styles/remove-gallery-block.css' );
-    
+
     global $post;
     if (has_block('gallery', $post->post_content)) {
         $post_blocks = parse_blocks($post->post_content);
@@ -48,3 +48,17 @@ function getPageGallery(){
 
     return $images;
 }
+
+function nano_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo plugin_dir_url( __FILE__); ?>/images/logo.png);
+			height:80px;
+			width:320px;
+			background-size: 320px 80px;
+			background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'nano_logo' );
