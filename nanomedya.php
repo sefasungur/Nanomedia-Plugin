@@ -21,6 +21,18 @@ function nanomedyaDashboard() {
     wp_enqueue_style( 'nanomedya-style', plugin_dir_url( __FILE__ ). '/styles/admin/dashboard.css' );
 }
 
+function wp_get_attachment( $attachment_id ) {
+
+    $attachment = get_post( $attachment_id );
+    return array(
+        'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+        'caption' => $attachment->post_excerpt,
+        'description' => $attachment->post_content,
+        'href' => get_permalink( $attachment->ID ),
+        'src' => $attachment->guid,
+        'title' => $attachment->post_title
+    );
+}
 
 
 function getPageGallery(){
@@ -39,10 +51,12 @@ function getPageGallery(){
     foreach($ids as $id ) {
         $dimage = [];
         $image = wp_get_attachment_image_src( $id, "full" );
+
         $dimage["src"] = $image[0];
         $dimage["width"] = $image[1];
         $dimage["height"] = $image[2];
         $dimage["caption"] = wp_get_attachment_caption($id);
+        $dimage["description"] = wp_get_attachment($id);
         $images[] = $dimage;
     }
 
