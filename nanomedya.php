@@ -56,7 +56,8 @@ function getPageGallery(){
         $dimage["width"] = $image[1];
         $dimage["height"] = $image[2];
         $dimage["caption"] = wp_get_attachment_caption($id);
-        $dimage["description"] = wp_get_attachment($id);
+        $desc =  wp_get_attachment($id);
+        $dimage["description"] = $desc["description"];
         $images[] = $dimage;
     }
 
